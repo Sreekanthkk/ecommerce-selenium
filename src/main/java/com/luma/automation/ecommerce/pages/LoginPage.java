@@ -22,7 +22,7 @@ public class LoginPage {
 	private By btnSignIn=By.xpath("//button/span[text()='Sign In']");
 	private By linkForgotPwd=By.linkText("Forgot Your Password?");
 	private By btnCreateAcct=By.linkText("Create an Account");
-	private static final Logger log=Logger.getLogger(LoginPage.class);
+	//private static final Logger log=Logger.getLogger(LoginPage.class);
 	
 	
 	public LoginPage(WebDriver driver) {
@@ -32,7 +32,7 @@ public class LoginPage {
 	
 	public String getLoginPageTitle() {
 		if (eleUtil.waitForTitle(Constants.DEFAULT_WAIT_TIMEOUT, Constants.LOGIN_PAGE_TITLE)) {
-			log.debug("Expected: "+Constants.LOGIN_PAGE_TITLE+" ,Actual: "+driver.getTitle());
+			//log.debug("Expected: "+Constants.LOGIN_PAGE_TITLE+" ,Actual: "+driver.getTitle());
 			return driver.getTitle();
 		}
 		else {

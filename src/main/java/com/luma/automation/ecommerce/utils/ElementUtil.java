@@ -29,7 +29,7 @@ import com.luma.automation.ecommerce.factory.DriverFactory;
 public class ElementUtil {
 	private WebDriver driver;
 	private JSUtils jsUtils;
-	private static final Logger log=LogManager.getLogger(ElementUtil.class);
+	//private static final Logger log=LogManager.getLogger(ElementUtil.class);
 	
 	public ElementUtil(WebDriver driver){
 		this.driver=driver;
