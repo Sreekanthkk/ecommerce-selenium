@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- thread-count="1"
+	parallel="tests" -->
+<suite name="Test Suite" verbose="4" >
+	<listeners>
+		<listener class-name="com.luma.automation.ecommerce.listeners.ExtentReportListnr" />
+	</listeners>
+	
+	
+	<test name="Registration Page Test _ chrome_89">
+		<!--  <parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="89.0" /> -->
+		<classes>
+			<class name="com.luma.automation.ecommerce.tests.RegistrationPageTest" />
+		</classes>
+		
+	</test>
+
+	
+
+
+</suite>
