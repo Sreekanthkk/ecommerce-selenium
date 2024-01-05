@@ -137,7 +137,7 @@ public class DriverFactory {
 	}
 
 	public Properties initProperties() {
-		String env = System.getProperty("env");
+		env = System.getProperty("env");
 		System.out.println("Test environment: "+env);
 		String filePath=null;
 		FileInputStream ip = null;
