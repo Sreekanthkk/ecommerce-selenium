@@ -33,7 +33,6 @@ public class DriverFactory {
 	public static boolean highlight;
 
 	public WebDriver initDriver(Properties prop) {
-		// env=System.getProperty(env);
 		browser = prop.getProperty("browser").trim();
 		String url = prop.getProperty("url");
 		highlight = Boolean.parseBoolean(prop.getProperty("highlight").trim());
@@ -139,13 +138,14 @@ public class DriverFactory {
 
 	public Properties initProperties() {
 		String env = System.getProperty("env");
+		System.out.println("Test environment: "+env);
 		String filePath=null;
 		FileInputStream ip = null;
 		if(env==null||env.isEmpty()) {
 			filePath = "src/test/resources/config/config.properties";
 		}
 		else {
-			switch(env.toLowerCase()) {
+			switch(env.toLowerCase().trim()) {
 				case "qa": filePath = "src/test/resources/config/qa_config.properties";
 				case "dev": filePath = "src/test/resources/config/dev_config.properties";
 				case "prod": filePath = "src/test/resources/config/config.properties";
@@ -154,6 +154,7 @@ public class DriverFactory {
 			}
 		}
 		try {
+			System.out.println("File Path: "+filePath);
 			ip = new FileInputStream(new File(filePath));
 			prop = new Properties();
 			prop.load(ip);
