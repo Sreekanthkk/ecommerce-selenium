@@ -14,6 +14,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -45,6 +46,9 @@ public class DriverFactory {
 			} else {
 				// System.setProperty("webdriver.chrome.driver","C:\\MyLearning\\Selenium\\Drivers\\chromedriver_win32\\chromedriver.exe");
 				WebDriverManager.chromedriver().setup();
+				ChromeOptions co=optionsManager.getChromeOptions();
+				System.out.println(co.getCapabilityNames());
+				System.out.println(co.getCapability("headless"));
 				driver = new ChromeDriver(optionsManager.getChromeOptions());
 				tlDriver.set(driver);
 			}
