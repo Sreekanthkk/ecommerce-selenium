@@ -11,6 +11,7 @@ public class LandingPage {
 	
 	WebDriver driver;
 	ElementUtil eleUtil;
+	private By dummy=null;
 	private By linkSignIn=By.linkText("Sign In");
 	private By linkCreateAcct=By.linkText("Create an Account");
 	
