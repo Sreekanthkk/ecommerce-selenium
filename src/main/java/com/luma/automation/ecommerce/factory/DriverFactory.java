@@ -137,17 +137,17 @@ public class DriverFactory {
 	}
 
 	public Properties initProperties() {
-		env = System.getProperty("env");
+		env = System.getProperty("env").toLowerCase().trim();
 		System.out.println("Test environment: "+env);
 		String filePath=null;
 		FileInputStream ip = null;
 		if(env!=null) {
-			switch(env.toLowerCase().trim()) {
-				case "qa": filePath = "src/test/resources/config/qa_config.properties";
-				case "dev": filePath = "src/test/resources/config/dev_config.properties";
-				case "prod": filePath = "src/test/resources/config/config.properties";
-				case "uat": filePath = "src/test/resources/config/uat_config.properties";
-				default: filePath = "src/test/resources/config/config.properties";
+			switch(env) {
+				case "qa": filePath = "src/test/resources/config/qa_config.properties"; break;
+				case "dev": filePath = "src/test/resources/config/dev_config.properties"; break;
+				case "prod": filePath = "src/test/resources/config/config.properties"; break;
+				case "uat": filePath = "src/test/resources/config/uat_config.properties"; break;
+				default: filePath = "src/test/resources/config/config.properties"; 
 			}
 		}
 		else {
