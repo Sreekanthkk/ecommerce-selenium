@@ -6,7 +6,7 @@ import java.util.List;
 public class Constants {
 
 	public static final String LOGIN_PAGE_TITLE="Customer Login";
-	public static final String WELCOME_MESSAGE="Welcome, test user1!";
+	//public static final String WELCOME_MESSAGE="Welcome, test user1!";
 	public static final String ACCOUNT_PAGE_TITLE="My Account";
 	public static final String ACCOUNT_INFO_TITLE="Account Information";
 	public static final String ACCOUNT_LOGOUT_MESSAGE="You are signed out";

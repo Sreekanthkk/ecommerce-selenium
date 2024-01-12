@@ -6,32 +6,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.luma.automation.ecommerce.utils.ElementUtil;
+import com.luma.automation.ecommerce.utils.JSUtils;
 
 public class HomePage {
 	private WebDriver driver;
 	private ElementUtil eleUtil;
+	private JSUtils jsUtils;
 	private By promoDiv=By.cssSelector("div.blocks-promo");
 	private By promos=By.cssSelector("div.blocks-promo .content");
 	private By promosContentTitle=By.cssSelector("div.blocks-promo .content>strong.title");
-	private By hotSellersTitle=By.xpath("//div[@class='class-heading']/h2[@class='title']");
-	private By hotSellersSubTitle=By.xpath("//div[@class='class-heading']/p[@class='info']");
+	private By hotSellersTitle=By.xpath("//div[@class='content-heading']/h2[@class='title']");
+	private By hotSellersSubTitle=By.xpath("//div[@class='content-heading']/p[@class='info']");
 	private By productItems=By.cssSelector("ol.product-items>li strong.product-item-name>a");
 	private By customerMenu=By.cssSelector("span.customer-name>button.action");
 	private By linkMyAccont=By.cssSelector("ul.header.links>li>a[href$='customer/account/']:nth-of-type(1)");
 	private By linkSignOut=By.xpath("//div[@class='customer-menu' and @aria-hidden='false']//li[@class='authorization-link']/a[contains(text(),'Sign Out')]");
 	private By preLoginWelcomeMsg=By.cssSelector("header.page-header span.not-logged-in");
 	private By welcomeMessage=By.cssSelector("header.page-header li.welcome>span");
+	private String txtWelcomeMessage2="Welcome, test user1!";
 	
 	
 	HomePage(WebDriver driver){
 		this.driver=driver;
 		eleUtil=new ElementUtil(driver);
+		jsUtils=new JSUtils(driver);
 	}
 	
 	public String getPageTitle() {
 		return eleUtil.getPageTitle();
 	}
 	public boolean isPromoSectionExist() {	
+		jsUtils.doScrollIntoView(eleUtil.getElement(promos));
 		return eleUtil.isExist(promoDiv) && eleUtil.getElements(promos).size()>0?true:false;	
 	}
 	
@@ -41,6 +46,7 @@ public class HomePage {
 	
 	
 	public boolean isHotSellerSectionExist() {
+		jsUtils.doScrollIntoView(eleUtil.getElement(hotSellersTitle));
 		return eleUtil.isDisplayed(hotSellersTitle)? true:false;
 	}
 	

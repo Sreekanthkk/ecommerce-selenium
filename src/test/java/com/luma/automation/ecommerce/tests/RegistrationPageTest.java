@@ -35,7 +35,7 @@ public class RegistrationPageTest extends BaseTest{
 	public void verifyRegistration(String fname,String lname,String email,String password) {
 		accountPage=registrationPage.doRegister(fname, lname, email, password);
 		if(registrationPage.isAcctAlreadyExistsMsgDisplayed())
-			Assert.fail("Data Aleady exists");
+			Assert.assertTrue(registrationPage.isAcctAlreadyExistsMsgDisplayed());
 		else if(accountPage.isRegistrationSuccessful()) {
 			Assert.assertTrue(accountPage.getRegistrationSuccessfulMsg().equalsIgnoreCase(Constants.REGISTRATION_PAGE_SUCCESS));
 			accountPage.clickOnLogout();

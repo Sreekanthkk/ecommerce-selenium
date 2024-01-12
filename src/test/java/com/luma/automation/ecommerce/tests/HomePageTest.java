@@ -26,7 +26,7 @@ public class HomePageTest extends BaseTest{
 	
 	@Test(retryAnalyzer=Retry.class)
 	public void verifyWelcomeMsg() {
-		Assert.assertTrue(homePage.getWelcomeText().equals(Constants.WELCOME_MESSAGE), "Actual: "+homePage.getWelcomeText()+", Expected: "+Constants.WELCOME_MESSAGE);
+		Assert.assertTrue(homePage.getWelcomeText().equals("Welcome, "+prop.getProperty("firstname")+" "+prop.getProperty("lastname")+"!"), "Actual: "+homePage.getWelcomeText()+", Expected: Welcome, "+prop.getProperty("firstname")+" "+prop.getProperty("lastname")+"!");
 	}
 	
 	@Test
