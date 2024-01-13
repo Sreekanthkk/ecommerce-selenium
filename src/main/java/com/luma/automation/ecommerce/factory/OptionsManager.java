@@ -22,7 +22,7 @@ public class OptionsManager {
 		}
 		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
 			chromeOptions.setPlatformName("linux");
-			chromeOptions.setCapability("enableVNC", true);
+			//chromeOptions.setCapability("enableVNC", true);
 			chromeOptions.setBrowserVersion(prop.getProperty("browserVersion"));
 		}
 		
@@ -35,7 +35,7 @@ public class OptionsManager {
 		if(Boolean.parseBoolean(prop.getProperty("incognito"))) firefoxOptions.addArguments("--incognito");
 		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
 			firefoxOptions.setPlatformName("linux");
-			firefoxOptions.setCapability("enableVNC", true);
+			//firefoxOptions.setCapability("enableVNC", true);
 			firefoxOptions.setBrowserVersion(prop.getProperty("browserversion"));
 		}
 		
