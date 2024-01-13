@@ -23,7 +23,7 @@ public class OptionsManager {
 		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
 			chromeOptions.setPlatformName("linux");
 			//chromeOptions.setCapability("enableVNC", true);
-			chromeOptions.setBrowserVersion(prop.getProperty("browserVersion"));
+			chromeOptions.setBrowserVersion(prop.getProperty("browserversion"));
 		}
 		
 		return chromeOptions;
