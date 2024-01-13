@@ -7,9 +7,9 @@
 		<listener class-name="com.luma.automation.ecommerce.listeners.ExtentReportListnr" />
 		<listener class-name="com.luma.automation.ecommerce.listeners.TestAllureListener" />
 	</listeners>
-	<test name="Landing Page Test _ chrome_89">
-		<!--  <parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="89.0" /> -->
+	<test name="Landing Page Test _ chrome_91">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="91.0" />
 		<classes>
 			<class name="com.luma.automation.ecommerce.tests.LandingPageTest" />
 		</classes>
@@ -17,8 +17,8 @@
 	</test>
 
 	<test name="Login Page Test _ chrome_89">
-		<!--  <parameter name="browser" value="chrome" />
-		<parameter name="browserversion" value="89.0" /> -->
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="89.0" />
 		<classes>
 			<class name="com.luma.automation.ecommerce.tests.LoginPageTest" />
 		</classes>
@@ -26,6 +26,8 @@
 	</test>
 	
 	<test name="Home Page Test _ chrome_89">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="89" />
 		<parameter name="emailid" value="testuser1@email.com" />
 		<parameter name="password" value="Testuser123" />
 		<classes>
@@ -42,5 +44,26 @@
 		</classes>
 		
 	</test>
+	
+	<test name="Home Page Test _ FireFox_57">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="57.0" />
+		<parameter name="emailid" value="testuser1@email.com" />
+		<parameter name="password" value="Testuser123" />
+		<classes>
+			<class name="com.luma.automation.ecommerce.tests.HomePageTest" />
+		</classes>
+		
+	</test>
+	
+	<test name="Registration Page Test _ Firefox_83">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="83.0" />
+		<classes>
+			<class name="com.luma.automation.ecommerce.tests.RegistrationPageTest" />
+		</classes>
+		
+	</test>
+	
 
 </suite>
