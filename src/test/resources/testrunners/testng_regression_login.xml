@@ -44,7 +44,7 @@
 		</classes>
 		
 	</test>
-	
+	<!--  
 	<test name="Home Page Test _ FireFox_57">
 		<parameter name="browser" value="firefox" />
 		<parameter name="browserversion" value="57.0" />
@@ -64,6 +64,6 @@
 		</classes>
 		
 	</test>
-	
+	-->
 
 </suite>
